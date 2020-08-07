@@ -10,7 +10,12 @@ RUN apk add --no-cache \
     tzdata 
 
 # Installing Ruby Gems needed in the image
-RUN gem install --no-document \
+RUN apk add --no-cache --virtual .rubymakedepends \
+    build-base \
+    libxml2-dev \
+    ruby-dev \
+  && gem install --no-document \
+    json \
     bundler \
     rake \
     danger-gitlab 
