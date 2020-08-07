@@ -18,7 +18,9 @@ RUN apk add --no-cache --virtual .rubymakedepends \
     json \
     bundler \
     rake \
-    danger-gitlab 
+    bigdecimal \
+    danger-gitlab \
+  && apk del -r --no-cache .rubymakedepends
 
 
 ENV WORK_DIR "/danger"
